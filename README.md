@@ -3,6 +3,7 @@
 
 ## Story
 Date: 2018-4-9
+
 While I was starting to make and use latest CSS Grid; things went pretty well on the latest browsers, like: Chrome, Firefox and even Edge.
 Then the problem begins when client founds out that it doesn’t work for MSIE 11.
 I did a quick research and MSIE 11 do support `display: grid;`. And later I found out... it uses old spec.
@@ -16,3 +17,8 @@ I remembered something&hellip; polyfill! Stuff MSIE 11 needs to run modern vanil
 
 > polyfill: https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.42/polyfill.min.js
 
+Then when I put a grid cell some content in it. All other grid cells height went same height as well! That’s a big problem.
+
+Well long story short&hellip;
+
+I made a Javascript that works for my project!
