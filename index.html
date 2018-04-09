@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MSIE 11 Edge Grid Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="polyfill-msie11.min.js"></script>
+    <style type="text/less">
+        body {
+            background-color: black;
+            color: white;
+        }
+        
+        .grid {
+            display: grid;
+            display: -ms-grid;
+            
+            &--default {
+                grid-template-columns: repeat(12, 1fr);
+                grid-row-gap: 10px;
+                grid-column-gap: 10px;
+                -ms-grid-columns: e("1fr (10px 1fr)[11]");
+                -ms-grid-rows: e("(1fr 10px)[100]");
+                -ms-grid-row-gap: 10px;
+                -ms-grid-column-gap: 10px;
+                
+                .grid__column {
+                    
+                    min-height: 40px;
+                    
+                    &.fr {
+                        &-row {
+                            &-1 {
+                                grid-row: span 1;
+                                -ms-grid-row: 1;
+                                -ms-grid-row-span: 1;
+                            }
+                            &-2 {
+                                grid-row: span 2;
+                                -ms-grid-row: 1;
+                                -ms-grid-row-span: 3;
+                            }
+                        }
+                        &-col {
+                            &-1 {
+                                grid-column: span 1;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 1;
+                            }
+                            &-2 {
+                                grid-column: span 2;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 3;
+                            }
+                            &-3 {
+                                grid-column: span 3;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 5;
+                            }
+                            &-4 {
+                                grid-column: span 4;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 7;
+                            }
+                            &-5 {
+                                grid-column: span 5;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 9;
+                            }
+                            &-6 {
+                                grid-column: span 6;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 11;
+                            }
+                            &-7 {
+                                grid-column: span 7;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 13;
+                            }
+                            &-8 {
+                                grid-column: span 8;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 15;
+                            }
+                            &-9 {
+                                grid-column: span 9;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 17;
+                            }
+                            &-10 {
+                                grid-column: span 10;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 19;
+                            }
+                            &-11 {
+                                grid-column: span 11;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 21;
+                            }
+                            &-12 {
+                                grid-column: span 12;
+                                -ms-grid-column: 1;
+                                -ms-grid-column-span: 23;
+                            }
+                        }
+                        
+                    }
+                    
+                    .grid-cell {
+                        
+                    }
+                }
+            }
+            
+            &--responsive {
+                grid-row-gap: 10px;
+                grid-column-gap: 10px;
+                
+                grid-template-columns: 1fr;
+                -ms-grid-columns: 1fr;
+                -ms-grid-rows: e("(1fr 10px)[100]");
+                
+                @media all and (min-width: 600px ) {
+                    grid-template-columns: 1fr 1fr;
+                    -ms-grid-columns: e("1fr (10px 1fr)[1]");
+                    -ms-grid-rows: e("(1fr 10px)[100]");
+                }
+                @media all and (min-width: 900px ) {
+                    grid-template-columns: repeat(12, 1fr);
+                    -ms-grid-columns: e("1fr (10px 1fr)[11]");
+                    -ms-grid-rows: e("(1fr 10px)[100]");
+                }
+                
+                .grid__column {
+                    min-height: 40px;
+                    
+                    &.fr {
+                        &-row {
+                            &-1 {
+                                grid-row: span 1;
+                                -ms-grid-row: 1;
+                                -ms-grid-row-span: 1;
+                            }
+                            &-2 {
+                                grid-row: span 2;
+                                -ms-grid-row: 1;
+                                -ms-grid-row-span: 3;
+                            }
+                        }
+                        &-col {
+                            &-1 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 1;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 1;
+                                }
+                            }
+                            &-2 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 2;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 3;
+                                }
+                            }
+                            &-3 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 3;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 5;
+                                }
+                            }
+                            &-4 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 4;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 7;
+                                }
+                            }
+                            &-5 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 5;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 9;
+                                }
+                            }
+                            &-6 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 6;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 11;
+                                }
+                            }
+                            &-7 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 7;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 13;
+                                }
+                            }
+                            &-8 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 8;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 15;
+                                }
+                            }
+                            &-9 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 9;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 17;
+                                }
+                            }
+                            &-10 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 10;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 19;
+                                }
+                            }
+                            &-11 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 11;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 21;
+                                }
+                            }
+                            &-12 {
+                                @media all and (min-width: 900px ) {
+                                    grid-column: span 12;
+                                    -ms-grid-column: 1;
+                                    -ms-grid-column-span: 23;
+                                }
+                            }
+                        }
+                        
+                    }
+                    
+                    .grid-cell {
+                        
+                    }
+                }
+            }
+        }
+        
+    </style>
+    <script src="less.min.js"></script>
+</head>
+<body>
+   
+    This is my text first
+    
+    <h1>Grid is here</h1>
+    
+    <section class="grid grid--default grid--holder grid--msie">
+<!-- ##### 1/4 ##### -->
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: hotpink;">
+            1: 1/4
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: cyan;">
+            2: 1/4
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: yellow;">
+            3: 1/4
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: rgb(105, 115, 255);">
+            4: 1/4
+        </div>
+    <!-- ### row ### -->
+        <div class="column grid__column fr-col-6 fr-row-1" style="background-color: hotpink;">
+            1: 1/2
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: cyan;">
+            2: 1/4
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: yellow;">
+            3: 1/4
+        </div>
+    <!-- ### row ### -->
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: cyan;">
+            1: 1/4
+        </div>
+        <div class="column grid__column fr-col-6 fr-row-1" style="background-color: hotpink;">
+            2: 1/2
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: yellow;">
+            3: 1/4
+        </div>
+    <!-- ### row ### -->
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: hotpink;">
+            1: 1/4
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: yellow;">
+            3: 1/4
+        </div>
+        <div class="column grid__column fr-col-6 fr-row-1" style="background-color: cyan;">
+            2: 1/2
+        </div>
+    <!-- ### row ### -->
+        <div class="column grid__column fr-col-9 fr-row-1" style="background-color: hotpink;">
+            1: 3/4
+        </div>
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: yellow;">
+            2: 1/4
+        </div>
+    <!-- ### row ### -->
+        <div class="column grid__column fr-col-3 fr-row-1" style="background-color: yellow;">
+            1: 1/4
+        </div>
+        <div class="column grid__column fr-col-9 fr-row-1" style="background-color: hotpink;">
+            2: 3/4
+        </div>
+
+
+
+<!-- ##### 1/3 ##### -->
+        <div class="column grid__column fr-col-4 fr-row-1" style="background-color: red;">
+            1: 1/3
+        </div>
+        <div class="column grid__column fr-col-4 fr-row-1" style="background-color: green;">
+            2: 1/3
+        </div>
+        <div class="column grid__column fr-col-4 fr-row-1" style="background-color: blue;">
+            3: 1/3
+        </div>
+    <!-- ### row ### -->
+        <div class="column grid__column fr-col-8 fr-row-1" style="background-color: red;">
+            1: 2/3
+        </div>
+        <div class="column grid__column fr-col-4 fr-row-1" style="background-color: green;">
+            2: 1/3
+        </div>
+    <!-- ### row ### -->
+        <div class="column grid__column fr-col-4 fr-row-1" style="background-color: green;">
+            1: 1/3
+        </div>
+        <div class="column grid__column fr-col-8 fr-row-1" style="background-color: red;">
+            2: 2/3
+        </div>
+
+
+<!-- ##### 1/2 ##### -->
+        <div class="column grid__column fr-col-6 fr-row-1" style="background-color: hotpink;">
+            1: 1/2
+        </div>
+        <div class="column grid__column fr-col-6 fr-row-1" style="background-color: rgb(0, 195, 255);">
+            2: 1/2
+        </div>
+
+<!-- ##### 1/2 ##### -->
+        <div class="column grid__column fr-col-12 fr-row-1" style="background-color: hotpink;">
+            1: 1/1
+        </div>
+    </section>
+    <script src="setMsie11GridColumnPositions-compiled.js"></script>
+</body>
+</html>
